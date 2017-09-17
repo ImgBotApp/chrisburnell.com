@@ -1,0 +1,2 @@
+@-webkit-keyframes a{0%,50%{background-color:var(--color-highlight)}to{background-color:transparent;background-color:var(--color-transparent)}}@keyframes a{0%,50%{background-color:var(--color-highlight)}to{background-color:transparent;background-color:var(--color-transparent)}}.endnote-anchor[id]:target,.endnote[id]:target{-webkit-animation:a 2s linear;animation:a 2s linear;-webkit-animation:a var(--animation-duration) var(--animation-function);animation:a var(--animation-duration) var(--animation-function)}
+/*# sourceMappingURL=animations.min.css.map */

@@ -1,0 +1,68 @@
+/**
+ * Contains buttons and internal links.
+ */
+.nav-secondary,
+.buttons-list {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+}
+
+@media screen and (max-width: 500px) {
+    .nav-secondary,
+    .buttons-list {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 501px) {
+    .nav-secondary,
+    .buttons-list {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+    }
+}
+
+.nav-secondary {
+    margin-top: 2.25rem;
+    margin-top: var(--measure-large);
+    border-top-width: 0.125rem;
+    border-top-width: var(--border-width-thin);
+    border-top-style: solid;
+    border-top-style: var(--border-style-default);
+    border-top-color: rgba(6, 6, 6, 0.1);
+    border-top-color: var(--color-black--gamma);
+    padding-top: 2.068rem;
+}
+
+.page--home .nav-secondary {
+    margin-top: 0;
+    border-top: 0;
+}
+
+.page--about .nav-secondary {
+    border-top: 0;
+    padding: 0 0 1.25rem;
+    padding: 0 0 var(--measure-medium);
+}
+
+.buttons-list {
+    margin: 0 0 1.25rem;
+    margin: 0 0 var(--measure-medium);
+}
+
+.lede + .buttons-list {
+    margin-bottom: 2.25rem;
+    margin-bottom: var(--measure-large);
+}

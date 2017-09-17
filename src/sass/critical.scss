@@ -1,6 +1,6 @@
 ////
 /// @author Chris Burnell <me@chrisburnell.com>
-//  @version 3.0.0
+//  @version 3.1.0
 //  @license GNU GPLv3
 /// @link https://github.com/chrisburnell/chrisburnell.github.io/tree/master/src/css
 ////
@@ -26,11 +26,3 @@
 @import "layout/header";
 @import "layout/content";
 @import "layout/aside";
-
-/// COMPONENTS
-@import "components/animations";
-@import "components/helpers";
-@import "components/logo";
-@import "components/nav-primary";
-@import "components/content";
-@import "components/author";

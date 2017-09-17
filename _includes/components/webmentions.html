@@ -1,4 +1,5 @@
 {% if page.webmentions == true %}
+    <link rel="stylesheet" href="/css/components/webmentions.min.css">
     <section class="webmentions  js-webmentions" id="webmentions" aria-label="Webmentions" aria-hidden="true">
         {% include components/webmentions-form.html %}
         <ul id="webmentions-thread" class="webmentions-thread  js-webmentions-thread" aria-live="polite"></ul>

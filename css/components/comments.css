@@ -1,0 +1,35 @@
+@charset "UTF-8";
+.comments-anchor {
+    display: inline-block;
+    margin-top: 1.625em;
+    font-weight: 600;
+    font-weight: var(--font-weight-bold);
+    line-height: 2;
+}
+
+.comments-anchor::after {
+    content: " →";
+}
+
+.comments {
+    text-align: center;
+}
+
+.comments iframe {
+    margin-top: 2.25rem;
+    margin-top: var(--measure-large);
+}
+
+.comments noscript {
+    font-size: 1.25rem;
+    font-size: var(--font-size-large);
+    font-style: italic;
+}
+
+.button--show-comments::before, .button--show-comments:active::before {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+}

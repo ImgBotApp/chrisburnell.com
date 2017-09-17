@@ -2,6 +2,7 @@
 /// WebMentions
 /// @group components
 ////
+@import "../imports";
 
 
 // Appears only on article pages
@@ -17,7 +18,7 @@
 .webmentions__form {
     display: flex;
 
-    @include media("<=small") {
+    @include media("screen", "<=small") {
         flex-wrap: wrap;
     }
 
@@ -26,12 +27,12 @@
         align-self: center;
         @include v(padding-right, medium);
 
-        @include media("<=small") {
+        @include media("screen", "<=small") {
             flex: 1 0 100%;
             @include v(margin-bottom, medium);
         }
 
-        @include media(">small") {
+        @include media("screen", ">small") {
             flex: 1 1 auto;
         }
     }

@@ -12,6 +12,7 @@
 {% elsif include.type == 'archives' %}
     {% assign data = site.data.archives %}
 {% endif %}
+<link rel="stylesheet" href="/css/components/nav-secondary.min.css">
 <nav class="nav-secondary" role="navigation">
     {% include components/webmentions-button.html %}
     {% include components/comments-button.html %}

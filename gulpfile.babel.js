@@ -68,8 +68,44 @@ gulp.task('css-lint', () => {
         ], { syntax: scss_syntax }));
 });
 
-// Compile CSS from Sass
-gulp.task('css-main', ['css-lint'], () => {
+// Compile CSS Partials from Sass
+gulp.task('css-compile', ['css-lint'], () => {
+    return gulp.src(`${paths.css.src}/{components,pages,themes}/*.scss`)
+        .pipe(plumber())
+        .pipe(newer(`${paths.css.dest}`))
+        .pipe(sourcemaps.init())
+        .pipe(sass({
+            errLogToConsole: true,
+            indentWidth: 4,
+            outputStyle: 'expanded',
+            sourceMap: paths.css.src
+        }))
+        .pipe(postcss([
+            autoprefixer(),
+            reporter({
+                plugins: ['!postcss-discard-empty'],
+                clearMessages: true,
+                throwError: true
+            })
+        ]))
+        .pipe(gulp.dest(`${paths.css.dest}/`))
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(postcss([
+            cssnano(),
+            reporter({
+                plugins: ['!postcss-discard-empty'],
+                clearMessages: true,
+                throwError: true
+            })
+        ]))
+        .pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest(`${paths.css.dest}/`));
+});
+
+// Compile CSS from All Sass
+gulp.task('css-compile-all', ['css-lint'], () => {
     return gulp.src(`${paths.css.src}/main.scss`)
         .pipe(plumber())
         .pipe(newer(`${paths.css.dest}`))
@@ -169,7 +205,7 @@ gulp.task('js-compile', ['js-lint'], () => {
     return gulp.src([`${paths.js.src}/helpers.js`,
                      `${paths.js.src}/**/*.js`,
                      `!${paths.js.src}/serviceworker.js`,
-                     `!${paths.js.src}/vendors/**/{loadcss.js,loadcss-preload-polyfill.js,svg4everybody.js}`])
+                     `!${paths.js.src}/vendors/**/{loadcss,loadcss-preload-polyfill,svg4everybody}.js`])
         .pipe(plumber())
         .pipe(newer(`${paths.js.dest}/`))
         .pipe(sourcemaps.init())
@@ -236,7 +272,7 @@ gulp.task('default', () => {
 
 // CSS task
 gulp.task('css', () => {
-    gulp.start('css-main');
+    gulp.start('css-compile');
     gulp.start('css-critical');
     gulp.start('css-sassdoc');
 });

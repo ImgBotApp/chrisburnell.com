@@ -1,0 +1,33 @@
+/**
+ * Contains embedded media properly and allows them to be dynamically resized
+ * inside a set aspect ratio container.
+ */
+.media {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.media--16-by-9, .media--vimeo,
+.media--youtube {
+    padding-top: 56.25%;
+}
+
+.media--4-by-3, .media--speakerdeck {
+    padding-top: 75%;
+}
+
+/**
+ * CodePen Embeds
+ */
+.cp_embed_wrapper {
+    margin-bottom: 1.25rem;
+    margin-bottom: var(--measure-medium);
+    resize: both;
+    overflow: auto;
+}
+
+.cp_embed_wrapper iframe {
+    margin-bottom: 0;
+}

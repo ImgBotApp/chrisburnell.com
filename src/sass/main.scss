@@ -6,7 +6,7 @@
 /// Please contact me if you want to learn about anything you see here.
 ///
 /// @author Chris Burnell <me@chrisburnell.com>
-//  @version 3.0.0
+//  @version 3.1.0
 //  @license GNU GPLv3
 /// @link https://github.com/chrisburnell/chrisburnell.github.io/tree/master/src/css
 ////
@@ -38,29 +38,14 @@
 @import "layout/aside";
 @import "layout/footer";
 
-/// COMPONENTS
-@import "components/animations";
-@import "components/helpers";
+/// GLOBAL COMPONENTS
 @import "components/logo";
 @import "components/nav-primary";
 @import "components/content";
 @import "components/content-list";
-@import "components/search";
-@import "components/nav-secondary";
-@import "components/author";
-@import "components/widget";
-@import "components/footer";
-@import "components/nav-tertiary";
-@import "components/comments";
-@import "components/webmentions";
 @import "components/code";
 @import "components/icon";
 @import "components/media";
-@import "components/print";
-
-/// PAGES
-@import "pages/styleguide";
-
-/// THEMES
-@import "themes/christmas";
-@import "themes/halloween";
+@import "components/animations";
+@import "components/helpers";
+@import "components/print"

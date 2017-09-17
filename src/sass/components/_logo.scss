@@ -2,6 +2,7 @@
 /// Logo
 /// @group components
 ////
+@import "../imports";
 
 
 .logo {
@@ -15,8 +16,6 @@
 
     svg {
         @include absolute(top);
-        @include transition(transform $transition-duration-long);
-        @include transition(transform var(--transition-duration-long));
         @include will-change(transform);
         @include v(fill, raven);
         width:  $logo-size;
@@ -29,6 +28,13 @@
         @include media("screen", "prefers-reduced-motion") {
             @include transition(none);
         }
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        @include transition(transform $transition-duration-long);
+        @include transition(transform var(--transition-duration-long));
     }
 
     &:hover,

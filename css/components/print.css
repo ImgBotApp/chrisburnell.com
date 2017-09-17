@@ -1,0 +1,19 @@
+@media print {
+    nav,
+    .widget,
+    .comments,
+    footer .home-anchor,
+    footer .style-guide-anchor {
+        display: none;
+        visibility: hidden;
+    }
+    
+    p {
+        orphans: 3;
+        widows: 3;
+    }
+    kbd {
+        -webkit-box-shadow: none;
+                box-shadow: none;
+    }
+}

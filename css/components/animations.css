@@ -1,0 +1,33 @@
+@-webkit-keyframes anchor-target {
+    0%,
+    50% {
+        background-color: var(--color-highlight);
+    }
+    100% {
+        background-color: transparent;
+        background-color: var(--color-transparent);
+    }
+}
+
+@keyframes anchor-target {
+    0%,
+    50% {
+        background-color: var(--color-highlight);
+    }
+    100% {
+        background-color: transparent;
+        background-color: var(--color-transparent);
+    }
+}
+
+/**
+ * Anchor Target Animation
+ */
+
+.endnote[id]:target,
+.endnote-anchor[id]:target {
+    -webkit-animation: anchor-target 2s linear;
+            animation: anchor-target 2s linear;
+    -webkit-animation: anchor-target var(--animation-duration) var(--animation-function);
+            animation: anchor-target var(--animation-duration) var(--animation-function);
+}
